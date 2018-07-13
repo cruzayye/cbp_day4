@@ -8,59 +8,82 @@
         label {
             cursor: pointer;
         }
+        button {
+            background: lightsteelblue;
+        }
+        .big-number {
+            background: steelblue;
+            color: white;
+            font-family: fantasy;
+        }
     </style>
 </head>
 <body>
     <h1>Just an App</h1>
     <main>
+
         <p>
             <label>
-                <input name="power" type="radio"> Square
-            </label>
-            <label>
-                <input name="power" type="radio"> Cube
-            </label>
-            <label>
-                <input name="power" type="radio"> Quadratic
+                Number:
+                <input type="number" id="number">
             </label>
         </p>
-        
-  
-        
+
         <p>
-            <p></p>
-            <button onclick="showname()" >click me</button>
+            <label>
+                <input name="power" type="radio" value="2"> Square
+            </label>
+            <label>
+                <input name="power" type="radio" value="3"> Cube
+            </label>
+            <label>
+                <input name="power" type="radio" value="4"> Tesseract
+            </label>
         </p>
 
-        <p id= "result"></p>
+        <p>
+            <button onclick="calc()">click me</button>
+        </p>
 
-        <label>
-            name:
-            <input id="name">
-        </label>
+        <p id="result">test me</p>
     </main>
 
     <script>
+        function calc() {
+            var input = document.getElementById('number');
+            var number = input.value;
+            if(isNaN(number)) {
+                alert('please input a number!');
+            }
+            else {
+                var radio = document.querySelector('input[name=power]:checked');
+                
+                
+                
+                
+                // console.log(radio.value);
+                var p = document.getElementById('result');
+                p.innerHTML = 'Your number is <strong>' + number + '</strong>';
+                var background;
+                if(number > 25) {
+                    p.classList.add('big-number');
+                }
+                else {
+                    p.classList.remove('big-number');
+                }   
+            }
+        }
+        function count() {
+            for(var i = 0; i < 10; i++) {
+                console.log(i + 1);
+            }
+        }
 
+        //have the browser multiply the value the user inputs and muliply it by the 
+        //radio button( 1,2,3)
 
-     function showname(){
-         //document refers to the html
-         var input = document.getElementById('name')
-         var name = input.value;
-
-         var p = document.getElementById('result');
-         p.innerText = 'your name is ' + name;
-         p.style.color = 'steelblue';
-         console.log(name);
-         
-     }
-
-
-
-
-
-        
+       
     </script>
 
 </body>
-</html>
+</html> 
