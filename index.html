@@ -3,22 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>App Time</title>
+    <style>
+        label {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello world</h1>
-    
+    <h1>Just an App</h1>
+    <main>
+        <p>
+            <label>
+                <input name="power" type="radio"> Square
+            </label>
+            <label>
+                <input name="power" type="radio"> Cube
+            </label>
+            <label>
+                <input name="power" type="radio"> Quadratic
+            </label>
+        </p>
+        
+  
+        
+        <p>
+            <p></p>
+            <button onclick="showname()" >click me</button>
+        </p>
+
+        <p id= "result"></p>
+
+        <label>
+            name:
+            <input id="name">
+        </label>
+    </main>
+
     <script>
 
-        for(var i = 0; i < 10; i++){
-            console.log (i);
-        }
 
-        //this is a comment relating to branches 
-    
-    
-    
+     function showname(){
+         //document refers to the html
+         var input = document.getElementById('name')
+         var name = input.value;
+
+         var p = document.getElementById('result');
+         p.innerText = 'your name is ' + name;
+         p.style.color = 'steelblue';
+         console.log(name);
+         
+     }
+
+
+
+
+
+        
     </script>
+
 </body>
 </html>
